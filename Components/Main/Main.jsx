@@ -1,10 +1,9 @@
 import PrimarySection from "./PrimarySection/PrimarySection";
 import CreditCardSection from "./CreditCardSection/CreditCardSection";
-import Section from "../Utils/Section";
 
 const Main = () => {
   return (
-    <main className="flex flex-col bg-primary-bg overflow-hidden">
+    <main className="flex flex-col bg-primary-bg text-white">
       <PrimarySection />
       <CreditCardSection />
       <CreditCardSection />
