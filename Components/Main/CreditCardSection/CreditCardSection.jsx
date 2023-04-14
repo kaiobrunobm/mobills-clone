@@ -1,5 +1,4 @@
 import Section from "@/Components/Utils/Section";
-import Image from "next/image";
 const CreditCardSection = () => {
   return (
     <Section title="Credit cards">

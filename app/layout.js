@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className={Noto.className} lang="en">
-      <body>{children}</body>
+    <html lang="en">
+      <body className={Noto.className}>{children}</body>
     </html>
   );
 }

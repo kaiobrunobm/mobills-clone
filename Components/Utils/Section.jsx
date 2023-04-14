@@ -1,6 +1,3 @@
-import { Content } from "next/font/google";
-import React from "react";
-
 const Section = ({ title, children }) => {
   return (
     <section className="m-4">
