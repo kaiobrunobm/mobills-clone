@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className={Noto.className} lang="en">
-      <body className="bg-primary-bg h-screen w-screen">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

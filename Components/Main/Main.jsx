@@ -4,7 +4,7 @@ import Section from "../Utils/Section";
 
 const Main = () => {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col bg-primary-bg overflow-hidden">
       <PrimarySection />
       <CreditCardSection />
       <CreditCardSection />
