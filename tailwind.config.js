@@ -16,6 +16,7 @@ module.exports = {
         "mobills-color": "#6316D7",
         "card-section-color": "#26A59A",
         "card-section-secondary-color": "#3b3b3d",
+        "navbar-hover": "#3d3d3e",
       },
     },
   },
