@@ -16,13 +16,13 @@ import MobillsLg from "/public/mobills-lg-logo.svg";
 import { useState } from "react";
 
 const NavBar = () => {
-  const [bigNav, setBigNav] = useState(true);
+  const [bigNav, setBigNav] = useState(false);
   return (
     <nav
       className={
         bigNav
-          ? "group fixed bottom-[-0.1rem] w-full h-14 flex justify-center items-s text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:w-64 lg:h-full lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 duration-300"
-          : "fixed bottom-[-0.1rem] w-full h-14 flex justify-center items-s text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:w-24 lg:h-full lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 transition-all duration-300"
+          ? "group fixed bottom-[-0.1rem] w-full flex justify-center items-center text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:w-64 lg:h-full lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 lg:top-0 duration-300"
+          : "fixed bottom-[-0.1rem] w-full h-14 flex justify-center items-center text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:w-24 lg:h-full lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 lg:top-0 transition-all duration-300"
       }
     >
       <Image
@@ -32,17 +32,17 @@ const NavBar = () => {
         height={bigNav ? 48 : 48}
         className={
           bigNav
-            ? "hidden w-36 h-12 ml-7 lg:block animate-[all 0.32s ease-out 0s] duration-300"
-            : "hidden w-10 h-10 ml-7 lg:block animate-[all_0.32s_ease-in_0s] duration-300"
+            ? "hidden w-36 h-12 lg:block animate-[all 0.32s ease-out 0s] duration-300"
+            : "hidden w-10 h-10 lg:block animate-[all_0.32s_ease-in_0s] duration-300"
         }
       />
       <div className="hidden lg:flex lg:flex-start">
-        <div className={bigNav ? "flex gap-12" : "flex gap-2"}>
+        <div className={bigNav ? "flex gap-10" : "flex gap-1"}>
           <button
             className={
               bigNav
-                ? "hidden justify-end items-center bg-mobills-color w-44 h-14 rounded-full text-white p-4 ml-4 mb-5 mt-4 shadow-md duration-300 lg:flex flex-row-reverse gap-10"
-                : "hidden justify-end items-center bg-mobills-color w-14 h-14 rounded-full text-white p-4 ml-4 mb-5 mt-4 shadow-md duration-300 lg:flex flex-row-reverse gap-10"
+                ? "hidden justify-end items-center bg-[#774ffc] w-44 h-14 rounded-full text-white p-4 ml-9 mb-5 mt-4 shadow-lg shadow-primary-bg duration-300 lg:flex flex-row-reverse gap-10 hover:bg-[#6515dd]"
+                : "hidden justify-end items-center bg-[#774ffc] w-14 h-14 rounded-full text-white p-4 ml-9 mb-5 mt-4 shadow-lg shadow-primary-bg duration-300 lg:flex flex-row-reverse gap-10 hover:bg-[#6515dd]"
             }
           >
             {bigNav && <p className="origin-left duration-300">New</p>}
@@ -51,8 +51,8 @@ const NavBar = () => {
           <button
             className={
               bigNav
-                ? "hidden bg-secondary-bg rounded-full shadow-md shadow-primary-bg text-white w-7 h-7 justify-center items-center group-hover:flex"
-                : "hidden bg-secondary-bg rounded-full shadow-md shadow-primary-bg text-white w-7 h-7 justify-center items-center lg:flex"
+                ? "invisible bg-secondary-bg rounded-full shadow-md shadow-primary-bg text-white w-7 h-7 justify-center items-center duration-500 lg:flex group-hover:visible"
+                : "invisilbe bg-secondary-bg rounded-full shadow-md shadow-primary-bg text-white w-7 h-7 justify-center items-center  duration-500 lg:flex"
             }
             onClick={() => {
               setBigNav(!bigNav);
@@ -66,17 +66,16 @@ const NavBar = () => {
           </button>
         </div>
       </div>
-
       <div className="flex lg:mt-2 lg:flex lg:flex-col lg:items-start">
         <Link
           href="/"
           className={
             bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:text-mobills-color lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:border-l-4 lg:border-mobills-color lg:text-[16px] duration-300"
-              : "w-20 flex flex-col justify-center items-center gap-1 text-xs lg:text-mobills-color lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px] lg:border-l-4 lg:border-mobills-color duration-300"
+              ? "navbar-active-link  text-mobills-color lg:border-l-4 lg:border-mobills-color"
+              : "navbar-link text-mobills-color lg:border-l-4 lg:border-mobills-color"
           }
         >
-          <FiHome className="text-2xl" />
+          <FiHome className="text-2xl " />
           <span
             className={
               bigNav ? "lg:w-28 origin-left" : " lg:hidden lg:mr-12 origin-left"
@@ -88,9 +87,7 @@ const NavBar = () => {
         <Link
           href="/"
           className={
-            bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-              : "hidden w-20 flex-col justify-center items-center gap-1 text-xs lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px] lg:flex  duration-300"
+            bigNav ? "navbar-active-link" : "navbar-link hidden lg:flex"
           }
         >
           <AiOutlineBank className="text-2xl " />
@@ -104,11 +101,7 @@ const NavBar = () => {
         </Link>
         <Link
           href="/"
-          className={
-            bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-              : "w-20 flex flex-col justify-center items-center gap-1 text-xs lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px]  duration-300"
-          }
+          className={bigNav ? "navbar-active-link" : "navbar-link"}
         >
           <IoList className="text-2xl" />
           <span
@@ -119,13 +112,10 @@ const NavBar = () => {
             Transactions
           </span>
         </Link>
-
         <Link
           href="/"
           className={
-            bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-              : "hidden w-20 flex-col justify-center items-center gap-1 text-xs lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px] lg:flex  duration-300"
+            bigNav ? "navbar-active-link" : "hidden lg:flex navbar-link"
           }
         >
           <BsCreditCard2Back className="text-2xl" />
@@ -137,18 +127,12 @@ const NavBar = () => {
             Credit cards
           </span>
         </Link>
-
-        <button className="flex flex-col justify-center items-center text-xs">
+        <button className="flex justify-center items-center text-xs">
           <FiPlus className="bg-mobills-color w-14 h-14 rounded-full text-white p-2 mb-6 lg:mb-0 lg:hidden" />
         </button>
-
         <Link
           href="/"
-          className={
-            bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-              : "w-20 flex flex-col justify-center items-center gap-1 text-xs lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px]  duration-300"
-          }
+          className={bigNav ? "navbar-active-link" : "navbar-link"}
         >
           <BiFlag className="text-2xl" />
           <span
@@ -159,13 +143,10 @@ const NavBar = () => {
             Budgets
           </span>
         </Link>
-
         <Link
           href="/"
           className={
-            bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-              : "hidden w-20 flex-col justify-center items-center gap-1 text-xs lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px] lg:flex   duration-300"
+            bigNav ? "navbar-active-link" : "hidden lg:flex  navbar-link"
           }
         >
           <MdDataSaverOff className="text-2xl" />
@@ -179,11 +160,7 @@ const NavBar = () => {
         </Link>
         <Link
           href="/"
-          className={
-            bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-              : "w-20 flex flex-col justify-center items-center gap-1 text-xs lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px]  duration-300"
-          }
+          className={bigNav ? "navbar-active-link" : "navbar-link"}
         >
           <TfiMoreAlt className="text-2xl" />
           <span
@@ -194,13 +171,10 @@ const NavBar = () => {
             More
           </span>
         </Link>
-
         <Link
           href="/"
           className={
-            bigNav
-              ? "w-20 flex justify-center items-center gap-9 text-xs lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-              : "hidden w-20 flex-col justify-center items-center gap-1 text-xs lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px] lg:flex  duration-300"
+            bigNav ? "navbar-active-link" : "hidden lg:flex navbar-link"
           }
         >
           <FiSettings className="text-2xl" />
@@ -213,7 +187,6 @@ const NavBar = () => {
           </span>
         </Link>
       </div>
-
       <Link
         href="/"
         className={

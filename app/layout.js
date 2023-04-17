@@ -1,7 +1,7 @@
 import "./globals.css";
-import { Noto_Sans } from "next/font/google";
+import { Maven_Pro } from "next/font/google";
 
-const Noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
+const Maven = Maven_Pro({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={Noto.className}>{children}</body>
+    <html className={Maven.className} lang="en">
+      <body>{children}</body>
     </html>
   );
 }

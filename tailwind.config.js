@@ -13,6 +13,7 @@ module.exports = {
         "primary-text": "#9B9A9F",
         "income-color": "#68B966",
         "expense-color": "#EE534F",
+        "balance-color": "#42a5f5",
         "mobills-color": "#6316D7",
         "card-section-color": "#26A59A",
         "card-section-secondary-color": "#3b3b3d",
