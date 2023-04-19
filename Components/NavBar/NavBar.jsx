@@ -19,41 +19,35 @@ const NavBar = () => {
   const [bigNav, setBigNav] = useState(false);
   return (
     <nav
-      className={
-        bigNav
-          ? "group fixed bottom-[-0.1rem] w-full flex justify-center items-center text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:w-64 lg:h-full lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 lg:top-0 duration-300"
-          : "fixed bottom-[-0.1rem] w-full h-14 flex justify-center items-center text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:w-24 lg:h-full lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 lg:top-0 transition-all duration-300"
-      }
+      className={`group fixed bottom-[-0.1rem] w-full flex justify-center items-center text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:h-full  lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 lg:top-0 ${
+        bigNav ? "w-full lg:w-64 duration-300" : "h-14 lg:w-24 duration-300"
+      }`}
     >
       <Image
         src={bigNav ? MobillsLg : MobillsMd}
         alt="Mobills Logo"
         width={bigNav ? 144 : 48}
         height={bigNav ? 48 : 48}
-        className={
+        className={`hidden lg:block duration-300 ${
           bigNav
-            ? "hidden w-36 h-12 lg:block animate-[all 0.32s ease-out 0s] duration-300"
-            : "hidden w-10 h-10 lg:block animate-[all_0.32s_ease-in_0s] duration-300"
-        }
+            ? "w-36 h-12 animate-[all 0.32s ease-out 0s]"
+            : "w-10 h-10 animate-[all_0.32s_ease-in_0s]"
+        }`}
       />
       <div className="hidden lg:flex lg:flex-start">
-        <div className={bigNav ? "flex gap-10" : "flex gap-1"}>
+        <div className={`flex ${bigNav ? "gap-10" : "gap-1"}`}>
           <button
-            className={
-              bigNav
-                ? "hidden justify-end items-center bg-[#774ffc] w-44 h-14 rounded-full text-white p-4 ml-9 mb-5 mt-4 shadow-lg shadow-primary-bg duration-300 lg:flex flex-row-reverse gap-10 hover:bg-[#6515dd]"
-                : "hidden justify-end items-center bg-[#774ffc] w-14 h-14 rounded-full text-white p-4 ml-9 mb-5 mt-4 shadow-lg shadow-primary-bg duration-300 lg:flex flex-row-reverse gap-10 hover:bg-[#6515dd]"
-            }
+            className={`hidden  justify-end items-center bg-[#774ffc] h-14 rounded-full text-white p-4 ml-9 mb-5 mt-4 shadow-lg shadow-primary-bg duration-300 lg:flex flex-row-reverse gap-10 hover:bg-[#6515dd] ${
+              bigNav ? "w-44" : "w-14"
+            }`}
           >
             {bigNav && <p className="origin-left duration-300">New</p>}
             <FiPlus className="text-2xl duration-300" />
           </button>
           <button
-            className={
-              bigNav
-                ? "invisible bg-secondary-bg rounded-full shadow-md shadow-primary-bg text-white w-7 h-7 justify-center items-center duration-500 lg:flex group-hover:visible"
-                : "invisilbe bg-secondary-bg rounded-full shadow-md shadow-primary-bg text-white w-7 h-7 justify-center items-center  duration-500 lg:flex"
-            }
+            className={`bg-secondary-bg rounded-full shadow-md shadow-primary-bg text-white w-7 h-7 justify-center items-center duration-500 lg:flex ${
+              bigNav && "invisible group-hover:visible"
+            }`}
             onClick={() => {
               setBigNav(!bigNav);
             }}
@@ -69,17 +63,15 @@ const NavBar = () => {
       <div className="flex lg:mt-2 lg:flex lg:flex-col lg:items-start">
         <Link
           href="/"
-          className={
-            bigNav
-              ? "navbar-active-link  text-mobills-color lg:border-l-4 lg:border-mobills-color"
-              : "navbar-link text-mobills-color lg:border-l-4 lg:border-mobills-color"
-          }
+          className={`text-mobills-color lg:border-l-4 lg:border-mobills-color ${
+            bigNav ? "navbar-active-link" : "navbar-link"
+          }`}
         >
           <FiHome className="text-2xl " />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : " lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : "lg:hidden lg:mr-12"
+            }`}
           >
             DashBoard
           </span>
@@ -92,9 +84,9 @@ const NavBar = () => {
         >
           <AiOutlineBank className="text-2xl " />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : "lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : "lg:hidden lg:mr-12"
+            }`}
           >
             Account
           </span>
@@ -105,9 +97,9 @@ const NavBar = () => {
         >
           <IoList className="text-2xl" />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : " lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : " lg:hidden lg:mr-12"
+            }`}
           >
             Transactions
           </span>
@@ -120,9 +112,9 @@ const NavBar = () => {
         >
           <BsCreditCard2Back className="text-2xl" />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : " lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : " lg:hidden lg:mr-12"
+            }`}
           >
             Credit cards
           </span>
@@ -136,9 +128,9 @@ const NavBar = () => {
         >
           <BiFlag className="text-2xl" />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : " lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : " lg:hidden lg:mr-12"
+            }`}
           >
             Budgets
           </span>
@@ -151,9 +143,9 @@ const NavBar = () => {
         >
           <MdDataSaverOff className="text-2xl" />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : " lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : " lg:hidden lg:mr-12"
+            }`}
           >
             Reports
           </span>
@@ -164,9 +156,9 @@ const NavBar = () => {
         >
           <TfiMoreAlt className="text-2xl" />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : " lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : " lg:hidden lg:mr-12"
+            }`}
           >
             More
           </span>
@@ -179,9 +171,9 @@ const NavBar = () => {
         >
           <FiSettings className="text-2xl" />
           <span
-            className={
-              bigNav ? "lg:w-28 origin-left" : "lg:hidden lg:mr-12 origin-left"
-            }
+            className={`origin-left ${
+              bigNav ? "lg:w-28" : " lg:hidden lg:mr-12"
+            }`}
           >
             Settings
           </span>
@@ -189,17 +181,17 @@ const NavBar = () => {
       </div>
       <Link
         href="/"
-        className={
+        className={`w-20 flex justify-center items-center text-xs mt-72 lg:hover:bg-navbar-hover lg:h-[56px] duration-300 ${
           bigNav
-            ? "w-20 flex justify-center items-center gap-9 text-xs mt-72 lg:hover:bg-navbar-hover lg:w-[255px] lg:h-[56px] lg:text-[16px] duration-300"
-            : "hidden w-20 flex-col justify-center items-center gap-1 text-xs mt-72 lg:hover:bg-navbar-hover lg:w-[94px] lg:h-[56px] lg:flex  duration-300"
-        }
+            ? "gap-9 lg:w-[255px] lg:text-base"
+            : "hidden flex-col gap-1 lg:w-[94px] lg:flex"
+        }`}
       >
         <BiHelpCircle className="text-2xl" />
         <span
-          className={
-            bigNav ? "lg:w-28 origin-left" : "lg:hidden lg:mr-12 origin-left"
-          }
+          className={`origin-left ${
+            bigNav ? "lg:w-28" : " lg:hidden lg:mr-12"
+          }`}
         >
           Help Center
         </span>

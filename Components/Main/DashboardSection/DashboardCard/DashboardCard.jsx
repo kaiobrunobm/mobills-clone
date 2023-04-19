@@ -4,11 +4,9 @@ import { BsChevronRight } from "react-icons/bs";
 const DashboardCard = ({ icon, title, value, hidden = true }) => {
   return (
     <div
-      className={
-        hidden
-          ? "hidden gap-3 lg:flex lg:bg-secondary-bg lg:flex-row-reverse lg:h-[103px] lg:rounded-3xl lg:w-[351px] lg:justify-around lg:items-center   lg:shadow-md lg:cursor-pointer"
-          : "gap-3 flex lg:bg-secondary-bg lg:flex-row-reverse lg:h-[103px] lg:w-[351px] lg:rounded-[26px] lg:justify-around lg:items-center   lg:shadow-md lg:cursor-pointer"
-      }
+      className={`gap-3 lg:bg-secondary-bg lg:flex-row-reverse lg:h-[103px] lg:w-[351px] lg:justify-around lg:items-center   lg:shadow-md lg:cursor-pointer ${
+        hidden ? "hidden lg:flex lg:rounded-3xl" : "flex lg:rounded-[26px]"
+      }`}
     >
       {icon}
       <div className="flex flex-col lg:gap-1">
