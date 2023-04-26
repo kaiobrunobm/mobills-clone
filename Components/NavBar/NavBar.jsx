@@ -12,11 +12,10 @@ import Link from "next/link";
 import Image from "next/image";
 import MobillsMd from "/public/mobills-md-logo.svg";
 import MobillsLg from "/public/mobills-lg-logo.svg";
-
 import { useState } from "react";
-
 const NavBar = () => {
   const [bigNav, setBigNav] = useState(false);
+
   return (
     <nav
       className={`group fixed bottom-[-0.1rem] w-full flex justify-center items-center text-primary-text bg-secondary-bg border-t border-card-section-secondary-color lg:flex-col lg:h-full  lg:border-t-0 lg:border-r lg:justify-start lg:pt-5 lg:gap-0 lg:top-0 ${
@@ -77,7 +76,7 @@ const NavBar = () => {
           </span>
         </Link>
         <Link
-          href="/"
+          href="/Account"
           className={
             bigNav ? "navbar-active-link" : "navbar-link hidden lg:flex"
           }
@@ -92,7 +91,7 @@ const NavBar = () => {
           </span>
         </Link>
         <Link
-          href="/"
+          href="/Transactions"
           className={bigNav ? "navbar-active-link" : "navbar-link"}
         >
           <IoList className="text-2xl" />
@@ -105,7 +104,7 @@ const NavBar = () => {
           </span>
         </Link>
         <Link
-          href="/"
+          href="/CreditCard"
           className={
             bigNav ? "navbar-active-link" : "hidden lg:flex navbar-link"
           }
@@ -123,7 +122,7 @@ const NavBar = () => {
           <FiPlus className="bg-mobills-color w-14 h-14 rounded-full text-white p-2 mb-6 lg:mb-0 lg:hidden" />
         </button>
         <Link
-          href="/"
+          href="/Budgets"
           className={bigNav ? "navbar-active-link" : "navbar-link"}
         >
           <BiFlag className="text-2xl" />
@@ -136,7 +135,7 @@ const NavBar = () => {
           </span>
         </Link>
         <Link
-          href="/"
+          href="/Reports"
           className={
             bigNav ? "navbar-active-link" : "hidden lg:flex  navbar-link"
           }
@@ -164,7 +163,7 @@ const NavBar = () => {
           </span>
         </Link>
         <Link
-          href="/"
+          href="/Settings"
           className={
             bigNav ? "navbar-active-link" : "hidden lg:flex navbar-link"
           }

@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Maven_Pro } from "next/font/google";
-
+import Header from "@/Components/Header/Header";
+import NavBar from "@/Components/NavBar/NavBar";
 const Maven = Maven_Pro({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata = {
@@ -11,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className={Maven.className} lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <NavBar />
+      </body>
     </html>
   );
 }
