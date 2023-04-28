@@ -1,9 +1,5 @@
-import Main from "@/Components/Main/Main";
+import DashBoard from "./Dashboard/page";
 
 export default function Home() {
-  return (
-    <div>
-      <Main />
-    </div>
-  );
+  return <DashBoard />;
 }

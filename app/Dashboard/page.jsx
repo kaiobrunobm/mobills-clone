@@ -1,7 +1,7 @@
 import DashboardSection from "./DashboardSection/DashboardSection";
 import CreditCardSection from "./CreditCardSection/CreditCardSection";
 
-const Main = () => {
+const DashBoard = () => {
   return (
     <main className="flex flex-col bg-primary-bg text-white lg:pl-[95px] mt-[63px] mb-[54px] lg:m-0">
       <DashboardSection />
@@ -13,4 +13,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default DashBoard;
